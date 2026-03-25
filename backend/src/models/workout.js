@@ -23,5 +23,5 @@ const workoutSchema = new Schema({
 
 // Model = object voor maken/ophalen/aanpassen/verwijderen
 const Workout = mongoose.model('Workout', workoutSchema);
-
+ 
 export default Workout;

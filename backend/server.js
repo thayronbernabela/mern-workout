@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors({
   origin: 'http://localhost:5173'
 }));
-
+ 
 
 // Routes
 app.use('/api/workouts', workoutRoutes);
@@ -31,4 +31,4 @@ mongoose.connect(process.env.MONGO_URI)
   })
   .catch((error) => {
     console.error('Database verbinding mislukt:', error.message);
-  }); 
+  });

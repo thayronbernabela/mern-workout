@@ -9,7 +9,7 @@ import {
 } from '../controllers/workoutController.js';
 
 const router = express.Router();
-
+ 
 // GET alle workouts
 router.get('/', getAllWorkouts);
 

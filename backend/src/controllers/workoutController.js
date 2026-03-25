@@ -32,7 +32,7 @@ export const getWorkoutById = async (req, res) => {
   try {
     // 3. Zoek workout met dit ID
     const workout = await Workout.findById(id);
-
+ 
     // 4. Bestaat niet? Stuur 404
     if (!workout) {
       return res.status(404).json({ error: 'Workout niet gevonden' });

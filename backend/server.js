@@ -1,13 +1,20 @@
 // server.js
 import express from 'express';
-import mongoose from 'mongoose';
-import workoutRoutes from './src/routes/workoutRoutes.js';
+import mongoose from 'mongoose';;
+import cors from 'cors';
+import workoutRoutes from './src/routes/workoutRoutes.js'
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 // Middleware
 app.use(express.json());
+
+// CORS toestaan voor frontend
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
+
 
 // Routes
 app.use('/api/workouts', workoutRoutes);
@@ -16,7 +23,7 @@ app.use('/api/workouts', workoutRoutes);
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('Verbonden met MongoDB');
-    
+
     // Start server ALLEEN als database gelukt is
     app.listen(PORT, () => {
       console.log(`Server draait op http://localhost:${PORT}`);

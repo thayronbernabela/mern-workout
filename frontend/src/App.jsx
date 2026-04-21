@@ -21,7 +21,6 @@ function App() {
     fetchWorkouts();
   }, []);
 
-  
   // CREATE - Nieuwe workout toevoegen
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,7 +40,6 @@ function App() {
 
       const data = await response.json();
 
-
       if (response.ok) {
         setWorkouts([data, ...workouts]); // Voeg toe aan lijst
         setTitle('');
@@ -53,10 +51,9 @@ function App() {
     }
   };
 
-
   // DELETE - Workout verwijderen
   const handleDelete = async (id) => {
-    if (!confirm('Weet je het zeker?')) return;
+    if (!confirm('Weetzzz je het zeker?')) return;
 
     try {
       const response = await fetch(`http://localhost:4000/api/workouts/${id}`, {
@@ -117,4 +114,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;
